@@ -1,0 +1,35 @@
+body{
+	background-image: url("http://img.walls321.com/images1/vjzrqm0lfus.jpg");
+	background: cover;
+	color: white;
+}
+
+.fight__button{
+	text-align: center;
+	color: black;
+}
+
+#gametitle{
+	text-align: center;
+}
+
+.dropdown-menu{
+	border:1px solid rgba(255,255,255,0.35);
+	border-top:none;
+	border-radius:2px;
+	/*background-color:rgba(0,0,0,0.2);*/
+	/*background-color:#ccc*/
+}
+
+#dropdownMenu1{
+	width: 100%;
+	margin-top: 10px;
+}
+
+.field__textinput{
+	width:100%;
+}
+
+.dropdown-menu{
+	width: 100%;
+}

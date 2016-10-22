@@ -1,78 +1,91 @@
-function Gun () {
+let Gun = () =>{
   this.damage = 10;
-}
+} 
 
-function Flamethrower () {
+let Flamethrower = () => {
   this.damage = 400;
 }
 
-function Bubbles () {
+let Bubbles = () => {
   this.damage = 10000;
 }
 
-function Robot () {
+let Robot = () => {
   this.baseDamage = Math.floor(Math.random() * 10);
   this.life = 100;
   this.weapon = null;
 }
-Robot.prototype.attack = function (target) {
+
+let Robot.prototype.attack = (target) => {
   this.totalDamage = this.baseDamage + this.weapon.damage;
   target.life -= this.totalDamage;
 }
 
-function AerialDrone () {
-  this.type = "Drone";
-  this.attackType = "Aerial";
-}
-AerialDrone.prototype = new Robot();
-
-function NinjaDrone () {
-  this.baseDamage += 10;
-}
-NinjaDrone.prototype = new AerialDrone();
-
-function Raptor () {
-  this.baseDamage += 20;
-}
-Raptor.prototype = new AerialDrone();
-
-function GroundRobot () {
-  this.attackType = "Earth Bound";
+let GroundRobot = () => {
+  this.attackType = "Ground Based";
 }
 GroundRobot.prototype = new Robot();
 
-function TankRobot () {
-  this.type = "Tank";
+let AerialRobot = () => {
+  this.type = "Flyer";
+  this.attackType = "Aerial";
+}
+AerialRobot.prototype = new Robot();
+
+let WalkerRobot = () => {
+  this.type = "Walker";
   this.baseDamage += 5;
 }
-TankRobot.prototype = new GroundRobot();
+WalkerRobot.prototype = new GroundRobot();
 
-function Hulk () {
+let ATVRobot = () => {
+  this.type = "Wheeled/Tracked";
+  this.baseDamage += 10;
+}
+ATVRobot.prototype = new GroundRobot();
+
+
+//The robot list
+
+let NinjaDrone = () => {
+  this.baseDamage += 10;
+}
+NinjaDrone.prototype = new AerialRobot();
+
+
+let Raptor = () => {
+  this.baseDamage += 20;
+}
+Raptor.prototype = new AerialRobot();
+
+
+let Hulk = () => {
   this.baseDamage += 145;
 }
-Hulk.prototype = new TankRobot();
+Hulk.prototype = new WalkerRobot();
 
-function BigFoot () {
+
+let Bigfoot = () => {
   this.baseDamage += 15;
 }
-BigFoot.prototype = new TankRobot();
+BigFoot.prototype = new WalkerRobot();
 
-function Dragon () {
+let Dragon = () => {
   this.type = "FireBreather";
   this.baseDamage += 200;
 }
-Dragon.prototype = new GroundRobot();
+Dragon.prototype = new WalkerRobot();
 
-var raptor = new Raptor();
+let raptor = new Raptor();
 raptor.weapon = new Bubbles();
 console.log("raptor", raptor.life);
 
-var smaug = new Dragon();
+let smaug = new Dragon();
 smaug.weapon = new Flamethrower();
 smaug.attack(raptor);
 console.log("raptor", raptor.life);
 
-function Battleground () {
+let Battleground = () => {
 
 }
 
