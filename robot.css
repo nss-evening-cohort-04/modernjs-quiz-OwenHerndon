@@ -7,6 +7,7 @@ body{
 .fight__button{
 	text-align: center;
 	color: black;
+	margin-top: 10px;
 }
 
 #gametitle{
@@ -32,4 +33,26 @@ body{
 
 .dropdown-menu{
 	width: 100%;
+}
+
+#robot1{
+
+}
+
+#robot2{
+	text-align: right;
+}
+
+/*.card {
+  display : none;
+}*/
+
+#battleinfo{
+	text-align: center;
+	/*border-style: solid;
+	border-width: 2px;
+	border-color: white;
+	border-radius: 48px 48px 48px 48px;
+    -moz-border-radius: 48px 48px 48px 48px;
+    -webkit-border-radius: 48px 48px 48px 48px;*/
 }

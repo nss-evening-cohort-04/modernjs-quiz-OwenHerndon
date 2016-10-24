@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="robot.css">
 <body>
 
-<section id="player-setup" class="card card--name">
+<section id="player-setup" class="card card--setup">
         <div class="card__prompt">
           <h1 id="gametitle" class="col-md-12">Robot Wars</h1>
           <div class="field col-md-3">
@@ -16,13 +16,19 @@
             <div class="dropdown">
   				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" 	
   					data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    						Dropdown
+    						Choose a Robot
     				<span class="caret"></span>
   				</button>
   				<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    				<li><a href="#">Action</a></li>
-    				<li><a href="#">Another action</a></li>
-    				<li><a href="#">Something else here</a></li>
+    				<li><a href="#">Flyer</a></li>
+    				<li><a href="#">Flyer</a></li>
+    				<li><a href="#">Flyer</a></li>
+    				<li><a href="#">Walker</a></li>
+    				<li><a href="#">Walker</a></li>
+    				<li><a href="#">Walker</a></li>
+    				<li><a href="#">ATV</a></li>
+    				<li><a href="#">ATV</a></li>
+    				<li><a href="#">ATV</a></li>
   				</ul>
 			</div>
           </div>
@@ -35,26 +41,50 @@
           	<div class="dropdown">
   				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" 	
   					data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    						Dropdown
+    						Choose a Robot
     				<span class="caret"></span>
   				</button>
   				<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    				<li><a href="#">Action</a></li>
-    				<li><a href="#">Another action</a></li>
-    				<li><a href="#">Something else here</a></li>
+    				<li><a href="#">Flyer</a></li>
+    				<li><a href="#">Flyer</a></li>
+    				<li><a href="#">Flyer</a></li>
+    				<li><a href="#">Walker</a></li>
+    				<li><a href="#">Walker</a></li>
+    				<li><a href="#">Walker</a></li>
+    				<li><a href="#">ATV</a></li>
+    				<li><a href="#">ATV</a></li>
+    				<li><a href="#">ATV</a></li>
   				</ul>
 			</div>
           </div>
         </div>
 
         <div class="fight__button col-md-12">
-          <button class="fightbutton" type="">Fight!</button>
+          <button class="card__link fightbutton" next="card--battleground">Fight!</button>
         </div>
+</section>
+
+<section id="battleground" class="card card--battleground">
+	<div id="robot1" class="col-md-3">
+		<h3>Robot 1<h3>
+	</div>
+	
+	<div id="battleinfo" class="col-md-6">
+		<h3>Battle Info<h3>
+		<div id="combatText">Robot 1 hits robot 2, ouchie!</div>
+	</div>
+
+	<div id="robot2" class="col-md-3">
+		<h3>Robot 2</h3>
+	</div>
+	<div class="fight__button col-md-12">
+          <button class="card__link fightbutton" type="">Attack!</button>
+    </div>
 </section>
 
 <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="javascripts/DOMHandler"></script>
+<script type="text/javascript" src="javascripts/DOMHandler.js"></script>
 <script type="text/javascript" src="javascripts/main.js"></script>
 </body>
 </html>
