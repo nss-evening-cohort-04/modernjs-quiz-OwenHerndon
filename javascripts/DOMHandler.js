@@ -1,16 +1,20 @@
-$(".card__link").click(function(e) {
-    var nextCard = $(this).attr("next");
-    var moveAlong = false;
-switch (nextCard){
-	case "card--setup":
-		moveAlong = true;
-		break;
-		case "card--batteground":
-        moveAlong = true;
-        break;
-}
-if (moveAlong) {
-      $(".card").hide();
-      $("." + nextCard).show();
-    }
-});
+"use strict";
+
+$('#fightButton').on('click' , function(){
+		//take in names
+
+		//take in type selected
+
+		$('#player-setup').addClass('hide');
+		$('#battleground').removeClass('hide');
+
+		// $('#player-setup').slideUp();
+		// $('#battleground').slideDown();
+	});
+
+
+
+
+
+
+

@@ -1,3 +1,9 @@
+"use strict";
+
+var RobotWars = (function () {
+  return null;
+});
+
 // let Gun = () =>{
 //   this.damage = 10;
 // } 
@@ -11,9 +17,9 @@
 // }
 
 // let Robot = () => {
-//   this.baseDamage = Math.floor(Math.random() * 10);
-//   this.life = 100;
-//   this.weapon = null;
+  // this.baseDamage = Math.floor(Math.random() * 10);
+  // this.life = 100;
+  // this.weapon = null;
 // }
 
 // let GroundRobot = () => {
