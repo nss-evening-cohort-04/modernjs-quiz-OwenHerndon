@@ -1,6 +1,6 @@
 "use strict";
 
-var RobotWars = (function (battleground){
+var RobotWars = (function (battleGround){
 
 let selectedRobot = null;
 
@@ -13,45 +13,82 @@ let BattleGround = function() {
 };
 
 $(document).ready(function() {
+
+	const $player1Name = $('#robot1Name');
+	const $player2Name = $('#robot2Name');
+	const $combatText = $('#combatText');
+
 	//attack function
 	function attack() {
-		Player1.totalDamage = this.baseDamage;
-  		Player2.life -= Player1.totalDamage;
-  		Player2.totalDamage = this.baseDamage;
-  		Player1.life -= Player2.totalDamage;
-  		console.log("damage", this.baseDamage);
-  		$combatText.append(`<div>${battleGround.Player1.playerName} hits for ${battleGround.Player1.totalDamage} damage.</div>`);
-  		$combatText.append(`<div>${battleGround.Player2.playerName} hits for ${battleGround.Player2.totalDamage} damage.</div>`);
-  }
+		battleGround.Player1.robotType.totalDamage = battleGround.Player1.robotType.baseDamage;
+  		battleGround.Player2.robotType.totalDamage = battleGround.Player2.robotType.baseDamage;
+  		
+  		battleGround.Player1.robotType.life -= battleGround.Player2.robotType.totalDamage;
+  		battleGround.Player2.robotType.life -= battleGround.Player1.robotType.totalDamage;
+  		//console.log("damage", baseDamage);
+  		$combatText.append(`<div>${battleGround.Player1.playerName} hits for ${battleGround.Player1.robotType.totalDamage} damage.</div>`);
+  		$combatText.append(`<div>${battleGround.Player2.playerName} hits for ${battleGround.Player2.robotType.totalDamage} damage.</div>`);
 
+  		$('#player1Life').html(`${battleGround.Player1.robotType.life}` - `${battleGround.Player2.robotType.totalDamage}`);
+  		$('#player2Life').html(`${battleGround.Player2.robotType.life}` - `${battleGround.Player1.robotType.totalDamage}`);
+  		//setInterval();
+  		if(battleGround.Player1.robotType.life < 1){
+  			$combatText.append(`<div><h1>${battleGround.Player2.playerName} ${battleGround.Player2.robotType.name} wins!</h1></div>`);
+  		} 
+  		if(battleGround.Player2.robotType.life < 1){
+  			$combatText.append(`<div><h1>${battleGround.Player1.playerName} ${battleGround.Player1.robotType.name} wins!</h1></div>`);
+  		}
+  	}
+
+  	setInterval(() => {
+    	$('#combatText').children().first().fadeOut(1000).remove();
+  	}, 3000);
+
+  	//call attack function
 	$(".attackButton").click(function(e) {
     	attack();
   	});
 
+	//called upon fight click
   	function setupBattleGroundScreen() {
-    	$player1Name.text(battleGround.Player1.toString());
-    	$player2Name.text(battleGround.Player2.toString());
-    	$('#player1Life').html(`${battleGround.player1.life}`);
-    	$('#player2Life').html(`${battleGround.player2.life}`);
+    	$player1Name.text(battleGround.Player1.playerName);
+    	$player2Name.text(battleGround.Player2.playerName);
+    	$('#player1Life').html(`${battleGround.Player1.robotType.life}`);
+    	$('#player2Life').html(`${battleGround.Player2.robotType.life}`);
   	}
 
-
+  	//click event for selecting robot 1
   $(document).on("click", ".robotList1", function(e) {
     let selectedRobot = $(this).text();
     let player1Name = $("#player1Name").val()
     
     console.log(`${selectedRobot} selected`);
     console.log("player1 name", player1Name);
-    var selectedrobot = new RobotWars.Garage[selectedRobot];
+    var selectedrobot = new RobotWars.Garage[selectedRobot]();
+
+    RobotWars.Player1 = new RobotWars.Player(player1Name,selectedrobot);
+
 	});
 
+  //click event for selecting robot 2
   $(document).on("click", ".robotList2", function(e) {
     let selectedRobot = $(this).text();
     let player2Name = $("#player2Name").val()
     
-    console.log(`${selectedRobot} selected`);
-    console.log("player2 name", player2Name);
-    var selectedrobot = new RobotWars.Garage[selectedRobot];
+    var selectedrobot = new RobotWars.Garage[selectedRobot]();
+    
+
+    RobotWars.Player2 = new RobotWars.Player(player2Name,selectedrobot);
+
+   });
+
+  //click event for fight setup
+  $('#fightButton').on('click' , function(){
+
+		$('#player-setup').addClass('hide');
+		$('#battleground').removeClass('hide');
+		setupBattleGroundScreen();
+
 	});
 
 
@@ -59,5 +96,5 @@ $(document).ready(function() {
 
 });
 
-return battleground;
+return battleGround;
 })(RobotWars || {});

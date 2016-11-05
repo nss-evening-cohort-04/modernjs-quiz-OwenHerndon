@@ -1,24 +1,22 @@
 "use strict";
 
-$('#fightButton').on('click' , function(){
-		//take in names
 
-		//take in type selected
+// $('#fightButton').on('click' , function(){
 
-		$('#player-setup').addClass('hide');
-		$('#battleground').removeClass('hide');
-		setupBattleGroundScreen();
+// 		$('#player-setup').addClass('hide');
+// 		$('#battleground').removeClass('hide');
+// 		setupBattleGroundScreen();
 
-		// let player1Name = $("#player1-name").val()
-		// let player2Name = $("#player2-name").val()
-		// console.log("player1Name", player1Name);
-		// console.log("player2Name",player2Name);
+// 		// let player1Name = $("#player1-name").val()
+// 		// let player2Name = $("#player2-name").val()
+// 		// console.log("player1Name", player1Name);
+// 		// console.log("player2Name",player2Name);
 
-		// $('#player-setup').slideUp();
-		// $('#battleground').slideDown();
+// 		// $('#player-setup').slideUp();
+// 		// $('#battleground').slideDown();
 
-		//console.log(robots);
-	});
+// 		//console.log(robots);
+// 	});
 
 
 // $(document).on("click", ".dropdown-menu", function(e) {

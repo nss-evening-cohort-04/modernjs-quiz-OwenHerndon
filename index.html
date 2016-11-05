@@ -65,21 +65,25 @@
 </section>
 
 <section id="battleground" class="card card--battleground hide">
-	<div id="robot1" class="col-md-3">
-		<h3>Robot 1<h3>
-	</div>
-	
-	<div id="battleinfo" class="col-md-6">
-		<h3>Battle Info<h3>
-		<div id="combatText">Robot 1 hits robot 2, ouchie!</div>
+	<div class="col-md-3">
+		<div id="robot1Name"></div>
+		<div id="player1Life"></div>
 	</div>
 
-	<div id="robot2" class="col-md-3">
-		<h3>Robot 2</h3>
+	<div id="battleinfo" class="col-md-6">
+		<h3>Battle Info</h3>
+		<div id="combatText"></div>
 	</div>
+
+	<div class="col-md-3">
+		<div id="robot2Name" class="col-md-3"></div>
+		<div id="player2Life"></div>
+	</div>
+
 	<div class="fight__button col-md-12">
           <button class="card__link attackButton" type="">Attack!</button>
     </div>
+
 </section>
 
 <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
