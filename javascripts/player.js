@@ -2,28 +2,26 @@
 
 var RobotWars = (function (players){
 
-player.Combatants.Player = function(name) {
+players.Combatants.Player = function(name) {
 
   this.playerName = name || "Robot";
-  this.health = Math.floor(Math.random() * 40 + 150);
-
-  this.toString = function() {
-    var output = this.playerName;
-    
-    return output;
+  //this.robotType = robotType;
   };
 };
 
-player.Combatants.Player1 = function() {
-  this.playerName = name;
+players.Combatants.Player1 = function(player1Name, robotType) {
+  this.playerName = player1Name;
+  this.robotType = robotselected;
 };
-player.Combatants.Player1.prototype = new player.Combatants.Player();
+players.Combatants.Player1.prototype = new players.Combatants.Player();
 
 
-player.Combatants.Player2 = function() {
-	this.playerName = name;
+players.Combatants.Player2 = function(player2Name, robotType) {
+	this.playerName =player2Name;
+	this.robotType = robotselected;
+
 };
-player.Combatants.Player2.prototype = new player.Combatants.Player();
+players.Combatants.Player2.prototype = new players.Combatants.Player();
 
 	return players;
 })(RobotWars || {});

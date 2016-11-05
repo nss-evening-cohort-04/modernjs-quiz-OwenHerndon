@@ -1,8 +1,8 @@
 "use strict";
 
-var RobotWars = (function () {
-  return null;
-});
+var RobotWars = (function (war) {
+  return war;
+})(RobotWars || {});
 
 // let Gun = () =>{
 //   this.damage = 10;
@@ -24,6 +24,7 @@ var RobotWars = (function () {
 
 // let GroundRobot = () => {
 //   this.attackType = "Ground Based";
+    // this.baseDamage += 10;
 // }
 // GroundRobot.prototype = new Robot();
 
@@ -33,18 +34,11 @@ var RobotWars = (function () {
 // }
 // AerialRobot.prototype = new Robot();
 
-// let WalkerRobot = () => {
-//   this.type = "Walker";
+// let WaterRobot = () => {
+//   this.type = "Water";
 //   this.baseDamage += 5;
 // }
-// WalkerRobot.prototype = new GroundRobot();
-
-// let ATVRobot = () => {
-//   this.type = "Wheeled/Tracked";
-//   this.baseDamage += 10;
-// }
-// ATVRobot.prototype = new GroundRobot();
-
+// WaterRobot.prototype = new Robot();
 
 // //The robot list
 

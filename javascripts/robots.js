@@ -7,8 +7,7 @@ robotChoice.Garage = {};
 robotChoice.Garage.RobotType = function() {
   this.name = "";
   this.baseDamage = Math.floor(Math.random() * 10);
-  this.life = 100;
-  this.weapon = null;
+  this.life = 1000;
 
   this.toString = function() {
     return this.name;
