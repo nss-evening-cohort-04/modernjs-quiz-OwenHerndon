@@ -7,10 +7,10 @@ var RobotWars = (function (players){
 		this.robotType = robotType;
 	};
 
-	players.Player1 = {}
+	players.Player1 = {};
 
 
-	players.Player2 = {}
+	players.Player2 = {};
 
 	return players;
 })(RobotWars || {});

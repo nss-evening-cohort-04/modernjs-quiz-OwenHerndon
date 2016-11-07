@@ -32,10 +32,12 @@ $(document).ready(function() {
   		$('#player1Life').html(`${battleGround.Player1.robotType.life}` - `${battleGround.Player2.robotType.totalDamage}`);
   		$('#player2Life').html(`${battleGround.Player2.robotType.life}` - `${battleGround.Player1.robotType.totalDamage}`);
   		//setInterval();
-  		if(battleGround.Player1.robotType.life < 1){
+  		if(battleGround.Player1.robotType.life <= 0){
+  			//battleGround.Player1.robotType.life === 0;
   			$combatText.append(`<div><h1>${battleGround.Player2.playerName} ${battleGround.Player2.robotType.name} wins!</h1></div>`);
-  		} 
-  		if(battleGround.Player2.robotType.life < 1){
+  		}
+  		if(battleGround.Player2.robotType.life <= 0){
+  			//battleGround.Player2.robotType.life === 0;
   			$combatText.append(`<div><h1>${battleGround.Player1.playerName} ${battleGround.Player1.robotType.name} wins!</h1></div>`);
   		}
   	}
@@ -60,7 +62,7 @@ $(document).ready(function() {
   	//click event for selecting robot 1
   $(document).on("click", ".robotList1", function(e) {
     let selectedRobot = $(this).text();
-    let player1Name = $("#player1Name").val()
+    let player1Name = $("#player1Name").val();
     
     var selectedrobot = new RobotWars.Garage[selectedRobot]();
 
@@ -71,7 +73,7 @@ $(document).ready(function() {
   //click event for selecting robot 2
   $(document).on("click", ".robotList2", function(e) {
     let selectedRobot = $(this).text();
-    let player2Name = $("#player2Name").val()
+    let player2Name = $("#player2Name").val();
     
     var selectedrobot = new RobotWars.Garage[selectedRobot]();
     RobotWars.Player2 = new RobotWars.Player(player2Name,selectedrobot);
