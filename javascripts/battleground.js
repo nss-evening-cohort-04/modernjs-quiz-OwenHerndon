@@ -33,15 +33,14 @@ $(document).ready(function() {
   		$('#player2Life').html(`${battleGround.Player2.robotType.life}` - `${battleGround.Player1.robotType.totalDamage}`);
   		//setInterval();
   		if(battleGround.Player1.robotType.life <= 0){
-  			//battleGround.Player1.robotType.life === 0;
-  			$combatText.append(`<div><h1>${battleGround.Player2.playerName}'s ${battleGround.Player2.robotType.name} defeats ${battleGround.Player1.playerName}'s ${battleGround.Player1.robotType.name}!</h1></div>`);
+  			$combatText.append(`<div><h1>${battleGround.Player2.playerName}'s ${battleGround.Player2.robotType.type} ${battleGround.Player2.robotType.name} defeats ${battleGround.Player1.playerName}'s ${battleGround.Player1.robotType.type} ${battleGround.Player1.robotType.name}!</h1></div>`);
   		}
   		if(battleGround.Player2.robotType.life <= 0){
-  			//battleGround.Player2.robotType.life === 0;
-  			$combatText.append(`<div><h1>${battleGround.Player1.playerName}'s ${battleGround.Player1.robotType.name} defeats ${battleGround.Player2.playerName}'s ${battleGround.Player2.robotType.name}!</h1></div>`);
+  			$combatText.append(`<div><h1>${battleGround.Player1.playerName}'s ${battleGround.Player1.robotType.type} ${battleGround.Player1.robotType.name} defeats ${battleGround.Player2.playerName}'s ${battleGround.Player2.robotType.type} ${battleGround.Player2.robotType.name}!</h1></div>`);
   		}
   	}
 
+  	//fades combat text
   	setInterval(() => {
     	$('#combatText').children().first().fadeOut(1000).remove();
   	}, 3000);
@@ -63,28 +62,28 @@ $(document).ready(function() {
   	}
 
   	//click event for selecting robot 1
-  $(document).on("click", ".robotList1", function(e) {
-    let selectedRobot = $(this).text();
-    let player1Name = $("#player1Name").val();
+  	$(document).on("click", ".robotList1", function(e) {
+    	let selectedRobot = $(this).text();
+    	let player1Name = $("#player1Name").val();
     
-    var selectedrobot = new RobotWars.Garage[selectedRobot]();
+    	var selectedrobot = new RobotWars.Garage[selectedRobot]();
 
-    RobotWars.Player1 = new RobotWars.Player(player1Name,selectedrobot);
+    	RobotWars.Player1 = new RobotWars.Player(player1Name,selectedrobot);
 
 	});
 
-  //click event for selecting robot 2
-  $(document).on("click", ".robotList2", function(e) {
-    let selectedRobot = $(this).text();
-    let player2Name = $("#player2Name").val();
+  	//click event for selecting robot 2
+  	$(document).on("click", ".robotList2", function(e) {
+    	let selectedRobot = $(this).text();
+    	let player2Name = $("#player2Name").val();
     
-    var selectedrobot = new RobotWars.Garage[selectedRobot]();
-    RobotWars.Player2 = new RobotWars.Player(player2Name,selectedrobot);
+    	var selectedrobot = new RobotWars.Garage[selectedRobot]();
+    	RobotWars.Player2 = new RobotWars.Player(player2Name,selectedrobot);
 
-   });
+   	});
 
-  //click event for fight setup
-  $('#fightButton').on('click' , function(){
+  	//click event for fight setup
+  	$('#fightButton').on('click' , function(){
 
 		$('#player-setup').addClass('hide');
 		$('#battleground').removeClass('hide');
@@ -92,8 +91,8 @@ $(document).ready(function() {
 
 	});
 
+  	
   	//reset button
-
 	$('#resetButton').on('click' , function(){
 
 		$('#battleground').addClass('hide');

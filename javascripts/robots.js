@@ -18,20 +18,20 @@ robotChoice.Garage.RobotType = function() {
 
 //three types to edit in!
 
-// robotChoice.Garage.RobotType.GroundRobot = () => {
-//   this.type = "Tank";
-// };
-// robotChoice.GroundRobot.prototype = new robotChoice.Garage.RobotType();
+robotChoice.Garage.RobotType.AerialRobot = function() {
+  this.type = "Flying";
+};
+robotChoice.Garage.RobotType.AerialRobot.prototype = new robotChoice.Garage.RobotType();
 
-// robotChoice.Garage.RobotType.AerialRobot = () => {
-//   //this.type = "Flyer";
-// };
-// robotChoice.AerialRobot.prototype = new robotChoice.Garage.RobotType();
+robotChoice.Garage.RobotType.GroundRobot = function () {
+  this.type = "Tank";
+};
+robotChoice.Garage.RobotType.GroundRobot.prototype = new robotChoice.Garage.RobotType();
 
-// robotChoice.Garage.RobotType.WaterRobot = () => {
-//   //this.type = "Ship";
-// };
-// robotChoice.WaterRobot.prototype = new robotChoice.Garage.RobotType();
+robotChoice.Garage.RobotType.WaterRobot = function() {
+  this.type = "WaterBased";
+};
+robotChoice.Garage.RobotType.WaterRobot.prototype = new robotChoice.Garage.RobotType();
 
 
 //air type
@@ -39,76 +39,68 @@ robotChoice.Garage.Mustang = function() {
   	this.baseDamage += 10;
   	this.name = "Mustang";
   	this.life += 50;
-  	this.type = "Flyer";
+  	// this.type = "Flyer";
   	//this.weapon = new Nuke();
 };
-robotChoice.Garage.Mustang.prototype = new robotChoice.Garage.RobotType();
+robotChoice.Garage.Mustang.prototype = new robotChoice.Garage.RobotType.AerialRobot();
 
 robotChoice.Garage.B52 = function() {
   	this.baseDamage += 20;
    	this.name = "B52";
    	this.life += 300;
-   	this.type = "Flyer";
 };
-robotChoice.Garage.B52.prototype = new robotChoice.Garage.RobotType();
+robotChoice.Garage.B52.prototype = new robotChoice.Garage.RobotType.AerialRobot();
 
 robotChoice.Garage.Zero = function() {
   	this.baseDamage += 50;
    	this.name = "Zero";
    	this.life += 150;
-   	this.type = "Flyer";
 };
-robotChoice.Garage.Zero.prototype = new robotChoice.Garage.RobotType();
+robotChoice.Garage.Zero.prototype = new robotChoice.Garage.RobotType.AerialRobot();
 
 //ground type
 robotChoice.Garage.Sherman = function() {
   	this.baseDamage += 150;
    	this.name = "Sherman";
    	this.life += 150;
-   	this.type = "Tank";
 };
-robotChoice.Garage.Sherman.prototype = new robotChoice.Garage.RobotType();
+robotChoice.Garage.Sherman.prototype = new robotChoice.Garage.RobotType.GroundRobot();
 
 robotChoice.Garage.Tiger = function() {
   	this.baseDamage += 200;
    	this.name = "Tiger";
    	this.life += 250;
-   	this.type = "Tank";
 };
-robotChoice.Garage.Tiger.prototype = new robotChoice.Garage.RobotType();
+robotChoice.Garage.Tiger.prototype = new robotChoice.Garage.RobotType.GroundRobot();
 
 robotChoice.Garage.IS7 = function() {
   	this.baseDamage += 300;
    	this.name = "IS7";
    	this.life += 450;
-   	this.type = "Tank";
 };
-robotChoice.Garage.IS7.prototype = new robotChoice.Garage.RobotType();
+robotChoice.Garage.IS7.prototype = new robotChoice.Garage.RobotType.GroundRobot();
 
 //water type
 robotChoice.Garage.Destroyer = function() {
   	this.baseDamage += 100;
    	this.name = "Destroyer";
    	this.life += 100;
-   	this.type = "Ship";
 };
-robotChoice.Garage.Destroyer.prototype = new robotChoice.Garage.RobotType();
+robotChoice.Garage.Destroyer.prototype = new robotChoice.Garage.RobotType.WaterRobot();
 
 robotChoice.Garage.Cruiser = function() {
   	this.baseDamage += 500;
    	this.name = "Cruiser";
    	this.life += 400;
-   	this.type = "Ship";
 };
-robotChoice.Garage.Cruiser.prototype = new robotChoice.Garage.RobotType();
+robotChoice.Garage.Cruiser.prototype = new robotChoice.Garage.RobotType.WaterRobot();
 
 robotChoice.Garage.Battleship = function() {
   	this.baseDamage += 500;
    	this.name = "Battleship";
    	this.life += 500;
-   	this.type = "Ship";
 };
-robotChoice.Garage.Battleship.prototype = new robotChoice.Garage.RobotType();
+robotChoice.Garage.Battleship.prototype = new robotChoice.Garage.RobotType.WaterRobot();
 
 
 //weapons to add
