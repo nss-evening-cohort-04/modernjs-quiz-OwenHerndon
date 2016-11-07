@@ -3,6 +3,7 @@
 var RobotWars = (function (battleGround){
 
 let selectedRobot = null;
+let selectedWeapon = null;
 
 let BattleGround = function() {
   this.player1 = null;
@@ -25,13 +26,15 @@ $(document).ready(function() {
   		
   		battleGround.Player1.robotType.life -= battleGround.Player2.robotType.totalDamage;
   		battleGround.Player2.robotType.life -= battleGround.Player1.robotType.totalDamage;
-  		//console.log("damage", baseDamage);
+
   		$combatText.append(`<div>${battleGround.Player1.playerName} hits for ${battleGround.Player1.robotType.totalDamage} damage.</div>`);
   		$combatText.append(`<div>${battleGround.Player2.playerName} hits for ${battleGround.Player2.robotType.totalDamage} damage.</div>`);
 
   		$('#player1Life').html(`${battleGround.Player1.robotType.life}` - `${battleGround.Player2.robotType.totalDamage}`);
   		$('#player2Life').html(`${battleGround.Player2.robotType.life}` - `${battleGround.Player1.robotType.totalDamage}`);
   		//setInterval();
+
+  		//victory conditions
   		if(battleGround.Player1.robotType.life <= 0){
   			$combatText.append(`<div><h1>${battleGround.Player2.playerName}'s ${battleGround.Player2.robotType.type} ${battleGround.Player2.robotType.name} defeats ${battleGround.Player1.playerName}'s ${battleGround.Player1.robotType.type} ${battleGround.Player1.robotType.name}!</h1></div>`);
   		}
@@ -70,6 +73,8 @@ $(document).ready(function() {
 
     	RobotWars.Player1 = new RobotWars.Player(player1Name,selectedrobot);
 
+    	//$('#weaponList1').html(`${battleGround.Player1.robotType.name} Selected`);
+
     	$('#weaponList1').html(`${battleGround.Player1.robotType.name} Selected
     		<div class="dropdown">
   				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" 	
@@ -104,6 +109,8 @@ $(document).ready(function() {
     	var selectedrobot = new RobotWars.Garage[selectedRobot]();
     	RobotWars.Player2 = new RobotWars.Player(player2Name,selectedrobot);
 
+    	//$('#weaponList2').html(`${battleGround.Player2.robotType.name} Selected`);
+
     	$('#weaponList2').html(`${battleGround.Player2.robotType.name} Selected 
     		<div class="dropdown">
   				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" 	
@@ -118,9 +125,14 @@ $(document).ready(function() {
    					<li><a href="#" class="weaponList2">Gun</a></li>
    					<li><a href="#" class="weaponList2">Torpedo</a></li>
   				</ul>
-			</div>`);
+			</div><div id="weapon2Selected"></div>`);
 			$(document).on("click", ".weaponList2", function(e){
-				//select weapon code for player 2
+				let selectedWeapon = $(this).text();
+				var selectedweapon = new RobotWars.Armory[selectedWeapon]();
+
+				RobotWars.weaponType = new selectedweapon();
+
+				$('#weapon2Selected').html(`${battleGround.Player2.weaponType.weapon}`);				
 			});
 
    	});
