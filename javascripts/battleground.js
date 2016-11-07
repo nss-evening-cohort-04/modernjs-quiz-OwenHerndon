@@ -70,24 +70,29 @@ $(document).ready(function() {
 
     	RobotWars.Player1 = new RobotWars.Player(player1Name,selectedrobot);
 
-    	$('#weaponList1').html(`${battleGround.Player1.robotType.name} Selected`);
-   //  		`<div class="dropdown">
-  	// 			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" 	
-  	// 				data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-   //  						Choose a Weapon
-   //  				<span class="caret"></span>
-  	// 			</button>
-  	// 			<ul class="dropdown-menu" id="player1weapondropdown" aria-labelledby="dropdownMenu1">
-   //  				<li><a href="#" class="weaponList1">Napalm</a></li>
-   //  				<li><a href="#" class="weaponList1">Nuke</a></li>
-   // 				<li><a href="#" class="weaponList1">Cannon</a></li>
-   // 				<li><a href="#" class="weaponList1">Gun</a></li>
-   // 				<li><a href="#" class="weaponList1">Torpedo</a></li>
-  	// 			</ul>
-			// </div>`);
-			// $(document).on("click", ".weaponList1", function(e){
-			// 	//select weapon code for player 1
-			// });
+    	$('#weaponList1').html(`${battleGround.Player1.robotType.name} Selected
+    		<div class="dropdown">
+  				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" 	
+  					data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    						Choose a Weapon
+    				<span class="caret"></span>
+  				</button>
+  				<ul class="dropdown-menu" id="player1weapondropdown" aria-labelledby="dropdownMenu1">
+    				<li><a href="#" class="weaponList1">Napalm</a></li>
+    				<li><a href="#" class="weaponList1">Nuke</a></li>
+   				<li><a href="#" class="weaponList1">Cannon</a></li>
+   				<li><a href="#" class="weaponList1">Gun</a></li>
+   				<li><a href="#" class="weaponList1">Torpedo</a></li>
+  				</ul>
+			</div><div id="weapon1Selected"></div>`);
+			$(document).on("click", ".weaponList1", function(e){
+				let selectedWeapon = $(this).text();
+				var selectedweapon = new RobotWars.Armory[selectedWeapon]();
+
+				RobotWars.weaponType = new selectedweapon();
+
+				$('#weapon1Selected').html(`${battleGround.Player1.weaponType.weapon}`);				
+			});
 
 	});
 
@@ -99,24 +104,24 @@ $(document).ready(function() {
     	var selectedrobot = new RobotWars.Garage[selectedRobot]();
     	RobotWars.Player2 = new RobotWars.Player(player2Name,selectedrobot);
 
-    	$('#weaponList2').html(`${battleGround.Player2.robotType.name} Selected`); 
-   //  		`<div class="dropdown">
-  	// 			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu4" 	
-  	// 				data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-   //  						Choose a Weapon
-   //  				<span class="caret"></span>
-  	// 			</button>
-  	// 			<ul class="dropdown-menu" id="player2weapondropdown" aria-labelledby="dropdownMenu1">
-   //  				<li><a href="#" class="weaponList2">Napalm</a></li>
-   //  				<li><a href="#" class="weaponList2">Nuke</a></li>
-   // 					<li><a href="#" class="weaponList2">Cannon</a></li>
-   // 					<li><a href="#" class="weaponList2">Gun</a></li>
-   // 					<li><a href="#" class="weaponList2">Torpedo</a></li>
-  	// 			</ul>
-			// </div>`);
-			// $(document).on("click", ".weaponList2", function(e){
-			// 	//select weapon code for player 2
-			// });
+    	$('#weaponList2').html(`${battleGround.Player2.robotType.name} Selected 
+    		<div class="dropdown">
+  				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" 	
+  					data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    						Choose a Weapon
+    				<span class="caret"></span>
+  				</button>
+  				<ul class="dropdown-menu" id="player2weapondropdown" aria-labelledby="dropdownMenu1">
+    				<li><a href="#" class="weaponList2">Napalm</a></li>
+    				<li><a href="#" class="weaponList2">Nuke</a></li>
+   					<li><a href="#" class="weaponList2">Cannon</a></li>
+   					<li><a href="#" class="weaponList2">Gun</a></li>
+   					<li><a href="#" class="weaponList2">Torpedo</a></li>
+  				</ul>
+			</div>`);
+			$(document).on("click", ".weaponList2", function(e){
+				//select weapon code for player 2
+			});
 
    	});
 
