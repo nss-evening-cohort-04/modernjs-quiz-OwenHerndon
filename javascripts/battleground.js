@@ -34,11 +34,11 @@ $(document).ready(function() {
   		//setInterval();
   		if(battleGround.Player1.robotType.life <= 0){
   			//battleGround.Player1.robotType.life === 0;
-  			$combatText.append(`<div><h1>${battleGround.Player2.playerName}'s ${battleGround.Player2.robotType.name} wins!</h1></div>`);
+  			$combatText.append(`<div><h1>${battleGround.Player2.playerName}'s ${battleGround.Player2.robotType.name} defeats ${battleGround.Player1.playerName}'s ${battleGround.Player1.robotType.name}!</h1></div>`);
   		}
   		if(battleGround.Player2.robotType.life <= 0){
   			//battleGround.Player2.robotType.life === 0;
-  			$combatText.append(`<div><h1>${battleGround.Player1.playerName}'s ${battleGround.Player1.robotType.name} wins!</h1></div>`);
+  			$combatText.append(`<div><h1>${battleGround.Player1.playerName}'s ${battleGround.Player1.robotType.name} defeats ${battleGround.Player2.playerName}'s ${battleGround.Player2.robotType.name}!</h1></div>`);
   		}
   	}
 
