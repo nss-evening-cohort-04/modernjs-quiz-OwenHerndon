@@ -70,6 +70,19 @@ $(document).ready(function() {
 
     	RobotWars.Player1 = new RobotWars.Player(player1Name,selectedrobot);
 
+    	$('#weaponList1').html(`${battleGround.Player1.robotType.name} Selected`);
+   //  		`<div class="dropdown">
+  	// 			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" 	
+  	// 				data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+   //  						Choose a Weapon
+   //  				<span class="caret"></span>
+  	// 			</button>
+  	// 			<ul class="dropdown-menu" id="player1weapondropdown" aria-labelledby="dropdownMenu1">
+   //  				<li><a href="#" class="weaponList1">Napalm</a></li>
+   //  				<li><a href="#" class="weaponList1">Nuke</a></li>
+  	// 			</ul>
+			// </div>`);
+
 	});
 
   	//click event for selecting robot 2
@@ -79,6 +92,19 @@ $(document).ready(function() {
     
     	var selectedrobot = new RobotWars.Garage[selectedRobot]();
     	RobotWars.Player2 = new RobotWars.Player(player2Name,selectedrobot);
+
+    	$('#weaponList2').html(`${battleGround.Player2.robotType.name} Selected`); 
+   //  		`<div class="dropdown">
+  	// 			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" 	
+  	// 				data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+   //  						Choose a Weapon
+   //  				<span class="caret"></span>
+  	// 			</button>
+  	// 			<ul class="dropdown-menu" id="player2weapondropdown" aria-labelledby="dropdownMenu1">
+   //  				<li><a href="#" class="weaponList2">Napalm</a></li>
+   //  				<li><a href="#" class="weaponList2">Nuke</a></li>
+  	// 			</ul>
+			// </div>`);
 
    	});
 

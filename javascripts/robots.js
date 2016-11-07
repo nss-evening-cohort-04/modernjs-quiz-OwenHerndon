@@ -8,7 +8,8 @@ robotChoice.Garage.RobotType = function() {
   this.name = "";
   //this.baseDamage = Math.floor(Math.random() * 100) + this.weapon.damage;
   this.baseDamage = Math.floor(Math.random() * 100);
-  this.life = Math.floor(Math.random() * 5000);
+  //this.life = Math.floor(Math.random() * 5000);
+  this.life = 5000;
   this.weapon = null;
 
   this.toString = function() {
@@ -38,8 +39,7 @@ robotChoice.Garage.RobotType.WaterRobot.prototype = new robotChoice.Garage.Robot
 robotChoice.Garage.Mustang = function() {
   	this.baseDamage += 10;
   	this.name = "Mustang";
-  	this.life += 50;
-  	// this.type = "Flyer";
+  	this.life += 150;
   	//this.weapon = new Nuke();
 };
 robotChoice.Garage.Mustang.prototype = new robotChoice.Garage.RobotType.AerialRobot();
@@ -54,7 +54,7 @@ robotChoice.Garage.B52.prototype = new robotChoice.Garage.RobotType.AerialRobot(
 robotChoice.Garage.Zero = function() {
   	this.baseDamage += 50;
    	this.name = "Zero";
-   	this.life += 150;
+   	this.life += 250;
 };
 robotChoice.Garage.Zero.prototype = new robotChoice.Garage.RobotType.AerialRobot();
 
