@@ -55,6 +55,8 @@ $(document).ready(function() {
   	function setupBattleGroundScreen() {
     	$player1Name.text(battleGround.Player1.playerName);
     	$player2Name.text(battleGround.Player2.playerName);
+    	$('#robot1Type').html(`${battleGround.Player1.robotType.name}`);
+    	$('#robot2Type').html(`${battleGround.Player2.robotType.name}`);
     	$('#player1Life').html(`${battleGround.Player1.robotType.life}`);
     	$('#player2Life').html(`${battleGround.Player2.robotType.life}`);
   	}
