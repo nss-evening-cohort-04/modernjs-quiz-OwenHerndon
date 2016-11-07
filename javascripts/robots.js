@@ -6,8 +6,10 @@ robotChoice.Garage = {};
 
 robotChoice.Garage.RobotType = function() {
   this.name = "";
+  //this.baseDamage = Math.floor(Math.random() * 100) + this.weapon.damage;
   this.baseDamage = Math.floor(Math.random() * 100);
   this.life = Math.floor(Math.random() * 5000);
+  this.weapon = null;
 
   this.toString = function() {
     return this.name;
@@ -17,20 +19,17 @@ robotChoice.Garage.RobotType = function() {
 //three types to edit in!
 
 // robotChoice.Garage.RobotType.GroundRobot = () => {
-//   this.attackType = "Ground Based";
-//   //this.baseDamage += 10;
+//   this.type = "Tank";
 // };
 // robotChoice.GroundRobot.prototype = new robotChoice.Garage.RobotType();
 
 // robotChoice.Garage.RobotType.AerialRobot = () => {
 //   //this.type = "Flyer";
-//   this.attackType = "Aerial";
 // };
 // robotChoice.AerialRobot.prototype = new robotChoice.Garage.RobotType();
 
 // robotChoice.Garage.RobotType.WaterRobot = () => {
-//   this.attackType = "Water";
-//   //this.baseDamage += 5;
+//   //this.type = "Ship";
 // };
 // robotChoice.WaterRobot.prototype = new robotChoice.Garage.RobotType();
 
@@ -41,6 +40,7 @@ robotChoice.Garage.Mustang = function() {
   	this.name = "Mustang";
   	this.life += 50;
   	this.type = "Flyer";
+  	//this.weapon = new Nuke();
 };
 robotChoice.Garage.Mustang.prototype = new robotChoice.Garage.RobotType();
 
@@ -113,10 +113,10 @@ robotChoice.Garage.Battleship.prototype = new robotChoice.Garage.RobotType();
 
 //weapons to add
 function Gun () {
-  this.damage = 10;
+  this.damage = 100;
 }
 
-function Flamethrower () {
+function Napalm () {
   this.damage = 400;
 }
 
@@ -128,8 +128,8 @@ function Cannon () {
   this.damage = 300;
 }
 
-function Bomb () {
-  this.damage = 250;
+function Nuke () {
+  this.damage = 1000000;
 }
 
 return robotChoice;
