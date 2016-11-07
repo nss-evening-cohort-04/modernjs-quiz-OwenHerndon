@@ -72,7 +72,7 @@ $(document).ready(function() {
 
     	$('#weaponList1').html(`${battleGround.Player1.robotType.name} Selected`);
    //  		`<div class="dropdown">
-  	// 			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" 	
+  	// 			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" 	
   	// 				data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
    //  						Choose a Weapon
    //  				<span class="caret"></span>
@@ -80,8 +80,14 @@ $(document).ready(function() {
   	// 			<ul class="dropdown-menu" id="player1weapondropdown" aria-labelledby="dropdownMenu1">
    //  				<li><a href="#" class="weaponList1">Napalm</a></li>
    //  				<li><a href="#" class="weaponList1">Nuke</a></li>
+   // 				<li><a href="#" class="weaponList1">Cannon</a></li>
+   // 				<li><a href="#" class="weaponList1">Gun</a></li>
+   // 				<li><a href="#" class="weaponList1">Torpedo</a></li>
   	// 			</ul>
 			// </div>`);
+			// $(document).on("click", ".weaponList1", function(e){
+			// 	//select weapon code for player 1
+			// });
 
 	});
 
@@ -95,7 +101,7 @@ $(document).ready(function() {
 
     	$('#weaponList2').html(`${battleGround.Player2.robotType.name} Selected`); 
    //  		`<div class="dropdown">
-  	// 			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" 	
+  	// 			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu4" 	
   	// 				data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
    //  						Choose a Weapon
    //  				<span class="caret"></span>
@@ -103,8 +109,14 @@ $(document).ready(function() {
   	// 			<ul class="dropdown-menu" id="player2weapondropdown" aria-labelledby="dropdownMenu1">
    //  				<li><a href="#" class="weaponList2">Napalm</a></li>
    //  				<li><a href="#" class="weaponList2">Nuke</a></li>
+   // 					<li><a href="#" class="weaponList2">Cannon</a></li>
+   // 					<li><a href="#" class="weaponList2">Gun</a></li>
+   // 					<li><a href="#" class="weaponList2">Torpedo</a></li>
   	// 			</ul>
 			// </div>`);
+			// $(document).on("click", ".weaponList2", function(e){
+			// 	//select weapon code for player 2
+			// });
 
    	});
 
