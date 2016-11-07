@@ -14,6 +14,26 @@ robotChoice.Garage.RobotType = function() {
   };
 };
 
+//three types to edit in!
+let robotChoice.Garage.RobotType.GroundRobot = () => {
+  this.attackType = "Ground Based";
+    this.baseDamage += 10;
+}
+GroundRobot.prototype = new RobotType();
+
+let AerialRobot = () => {
+  this.type = "Flyer";
+  this.attackType = "Aerial";
+}
+AerialRobot.prototype = new RobotType();
+
+let WaterRobot = () => {
+  this.type = "Water";
+  this.baseDamage += 5;
+}
+WaterRobot.prototype = new RobotType();
+
+
 //air type
 robotChoice.Garage.Mustang = function() {
   	this.baseDamage += 10;

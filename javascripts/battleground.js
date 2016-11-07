@@ -62,8 +62,6 @@ $(document).ready(function() {
     let selectedRobot = $(this).text();
     let player1Name = $("#player1Name").val()
     
-    console.log(`${selectedRobot} selected`);
-    console.log("player1 name", player1Name);
     var selectedrobot = new RobotWars.Garage[selectedRobot]();
 
     RobotWars.Player1 = new RobotWars.Player(player1Name,selectedrobot);
@@ -76,8 +74,6 @@ $(document).ready(function() {
     let player2Name = $("#player2Name").val()
     
     var selectedrobot = new RobotWars.Garage[selectedRobot]();
-    
-
     RobotWars.Player2 = new RobotWars.Player(player2Name,selectedrobot);
 
    });

@@ -24,7 +24,7 @@ var RobotWars = (function (war) {
 
 // let GroundRobot = () => {
 //   this.attackType = "Ground Based";
-    // this.baseDamage += 10;
+//     this.baseDamage += 10;
 // }
 // GroundRobot.prototype = new Robot();
 
