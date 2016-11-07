@@ -20,8 +20,8 @@ $(document).ready(function() {
 
 	//attack function
 	function attack() {
-		battleGround.Player1.robotType.totalDamage = battleGround.Player1.robotType.baseDamage;
-  		battleGround.Player2.robotType.totalDamage = battleGround.Player2.robotType.baseDamage;
+		battleGround.Player1.robotType.totalDamage = battleGround.Player1.robotType.baseDamage + Math.floor(Math.random() * 500) + 25;
+  		battleGround.Player2.robotType.totalDamage = battleGround.Player2.robotType.baseDamage + Math.floor(Math.random() * 500) + 25;
   		
   		battleGround.Player1.robotType.life -= battleGround.Player2.robotType.totalDamage;
   		battleGround.Player2.robotType.life -= battleGround.Player1.robotType.totalDamage;
@@ -34,11 +34,11 @@ $(document).ready(function() {
   		//setInterval();
   		if(battleGround.Player1.robotType.life <= 0){
   			//battleGround.Player1.robotType.life === 0;
-  			$combatText.append(`<div><h1>${battleGround.Player2.playerName} ${battleGround.Player2.robotType.name} wins!</h1></div>`);
+  			$combatText.append(`<div><h1>${battleGround.Player2.playerName}'s ${battleGround.Player2.robotType.name} wins!</h1></div>`);
   		}
   		if(battleGround.Player2.robotType.life <= 0){
   			//battleGround.Player2.robotType.life === 0;
-  			$combatText.append(`<div><h1>${battleGround.Player1.playerName} ${battleGround.Player1.robotType.name} wins!</h1></div>`);
+  			$combatText.append(`<div><h1>${battleGround.Player1.playerName}'s ${battleGround.Player1.robotType.name} wins!</h1></div>`);
   		}
   	}
 

@@ -37,7 +37,7 @@ robotChoice.Garage.RobotType = function() {
 
 //air type
 robotChoice.Garage.Mustang = function() {
-  	this.baseDamage += Math.floor(Math.random() * 2) + 1;
+  	this.baseDamage += 10;
   	this.name = "Mustang";
   	this.life += 50;
   	this.type = "Flyer";
@@ -111,7 +111,7 @@ robotChoice.Garage.Battleship = function() {
 robotChoice.Garage.Battleship.prototype = new robotChoice.Garage.RobotType();
 
 
-//weapons
+//weapons to add
 function Gun () {
   this.damage = 10;
 }
