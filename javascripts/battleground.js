@@ -53,6 +53,7 @@ $(document).ready(function() {
 
 	//called upon fight click
   	function setupBattleGroundScreen() {
+  		$combatText.text("");
     	$player1Name.text(battleGround.Player1.playerName);
     	$player2Name.text(battleGround.Player2.playerName);
     	$('#robot1Type').html(`${battleGround.Player1.robotType.name}`);
@@ -91,6 +92,14 @@ $(document).ready(function() {
 
 	});
 
+  	//reset button
+
+	$('#resetButton').on('click' , function(){
+
+		$('#battleground').addClass('hide');
+		$('#player-setup').removeClass('hide');
+
+	});
 
 
 
