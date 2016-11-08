@@ -16,13 +16,13 @@ weaponChoice.Armory.WeaponType.Gun = function() {
 weaponChoice.Armory.WeaponType.Gun.prototype = new weaponChoice.Armory.WeaponType();
 
 weaponChoice.Armory.WeaponType.Napalm = function () {
-  this.weapon = "Gun";
+  this.weapon = "Napalm";
   this.damage = 400;
 };
 weaponChoice.Armory.WeaponType.Napalm.prototype = new weaponChoice.Armory.WeaponType();
 
 weaponChoice.Armory.WeaponType.Torpedo = function() {
-  this.weapon = "Gun";
+  this.weapon = "Torpedo";
   this.damage = 600;
 };
 weaponChoice.Armory.WeaponType.Torpedo.prototype = new weaponChoice.Armory.WeaponType();

@@ -10,7 +10,7 @@ robotChoice.Garage.RobotType = function() {
   this.baseDamage = Math.floor(Math.random() * 100);
   //this.life = Math.floor(Math.random() * 5000);
   this.life = 5000;
-  this.weapon = null;
+  //this.weapon = null;
 
   this.toString = function() {
     return this.name;
@@ -104,25 +104,25 @@ robotChoice.Garage.Battleship.prototype = new robotChoice.Garage.RobotType.Water
 
 
 //weapons to add
-function Gun () {
-  this.damage = 100;
-}
+// function Gun () {
+//   this.damage = 100;
+// }
 
-function Napalm () {
-  this.damage = 400;
-}
+// function Napalm () {
+//   this.damage = 400;
+// }
 
-function Torpedo () {
-  this.damage = 600;
-}
+// function Torpedo () {
+//   this.damage = 600;
+// }
 
-function Cannon () {
-  this.damage = 300;
-}
+// function Cannon () {
+//   this.damage = 300;
+// }
 
-function Nuke () {
-  this.damage = 1000000;
-}
+// function Nuke () {
+//   this.damage = 1000000;
+// }
 
 return robotChoice;
 })(RobotWars || {});

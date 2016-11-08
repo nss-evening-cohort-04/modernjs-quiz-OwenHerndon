@@ -21,8 +21,8 @@ $(document).ready(function() {
 
 	//attack function
 	function attack() {
-		battleGround.Player1.robotType.totalDamage = battleGround.Player1.robotType.baseDamage + Math.floor(Math.random() * 500) + 25;
-  		battleGround.Player2.robotType.totalDamage = battleGround.Player2.robotType.baseDamage + Math.floor(Math.random() * 500) + 25;
+		battleGround.Player1.robotType.totalDamage = battleGround.Player1.robotType.baseDamage + battleGround.Player1.weaponType.damage + Math.floor(Math.random() * 500) + 25;
+  		battleGround.Player2.robotType.totalDamage = battleGround.Player2.robotType.baseDamage + battleGround.Player2.weaponType.damage + Math.floor(Math.random() * 500) + 25;
   		
   		battleGround.Player1.robotType.life -= battleGround.Player2.robotType.totalDamage;
   		battleGround.Player2.robotType.life -= battleGround.Player1.robotType.totalDamage;
@@ -30,19 +30,29 @@ $(document).ready(function() {
   		$combatText.append(`<div>${battleGround.Player1.playerName} hits for ${battleGround.Player1.robotType.totalDamage} damage.</div>`);
   		$combatText.append(`<div>${battleGround.Player2.playerName} hits for ${battleGround.Player2.robotType.totalDamage} damage.</div>`);
 
-  		$('#player1Life').html(`${battleGround.Player1.robotType.life}` - `${battleGround.Player2.robotType.totalDamage}`);
-  		$('#player2Life').html(`${battleGround.Player2.robotType.life}` - `${battleGround.Player1.robotType.totalDamage}`);
+  		$('#player1Life').html(`${battleGround.Player1.robotType.life}`);
+  		$('#player2Life').html(`${battleGround.Player2.robotType.life}`);
   		//setInterval();
 
   		//victory conditions
-  		if(battleGround.Player1.robotType.life <= 0){
-  			$combatText.append(`<div><h1>${battleGround.Player2.playerName}'s ${battleGround.Player2.robotType.type} ${battleGround.Player2.robotType.name} defeats ${battleGround.Player1.playerName}'s ${battleGround.Player1.robotType.type} ${battleGround.Player1.robotType.name}!</h1></div>`);
-  		}
-  		if(battleGround.Player2.robotType.life <= 0){
-  			$combatText.append(`<div><h1>${battleGround.Player1.playerName}'s ${battleGround.Player1.robotType.type} ${battleGround.Player1.robotType.name} defeats ${battleGround.Player2.playerName}'s ${battleGround.Player2.robotType.type} ${battleGround.Player2.robotType.name}!</h1></div>`);
-  		}
+  		// if(battleGround.Player1.robotType.life < 1){
+  		// 	$combatText.append(`<div><h1>${battleGround.Player2.playerName}'s ${battleGround.Player2.robotType.type} ${battleGround.Player2.robotType.name} defeats ${battleGround.Player1.playerName}'s ${battleGround.Player1.robotType.type} ${battleGround.Player1.robotType.name} with a ${battleGround.Player2.weaponType.weapon}!</h1></div>`);
+  		// }
+  		// else if(battleGround.Player2.robotType.life < 1){
+  		// 	$combatText.append(`<div><h1>${battleGround.Player1.playerName}'s ${battleGround.Player1.robotType.type} ${battleGround.Player1.robotType.name} defeats ${battleGround.Player2.playerName}'s ${battleGround.Player2.robotType.type} ${battleGround.Player2.robotType.name} with a ${battleGround.Player1.weaponType.weapon}!</h1></div>`);
+  		// }
+  		victory(battleGround);
   	}
 
+  	function victory(battleGround){
+  		console.log("battleGround",battleGround);
+  		if(battleGround.Player1.robotType.life < 1){
+  			$combatText.append(`<div><h1>${battleGround.Player2.playerName}'s ${battleGround.Player2.robotType.type} ${battleGround.Player2.robotType.name} defeats ${battleGround.Player1.playerName}'s ${battleGround.Player1.robotType.type} ${battleGround.Player1.robotType.name} with a ${battleGround.Player2.weaponType.weapon}!</h1></div>`);
+  		}
+  		else if(battleGround.Player2.robotType.life < 1){
+  			$combatText.append(`<div><h1>${battleGround.Player1.playerName}'s ${battleGround.Player1.robotType.type} ${battleGround.Player1.robotType.name} defeats ${battleGround.Player2.playerName}'s ${battleGround.Player2.robotType.type} ${battleGround.Player2.robotType.name} with a ${battleGround.Player1.weaponType.weapon}!</h1></div>`);
+  		}
+  	}
   	//fades combat text
   	setInterval(() => {
     	$('#combatText').children().first().fadeOut(1000).remove();
@@ -92,9 +102,7 @@ $(document).ready(function() {
 			</div><div id="weapon1Selected"></div>`);
 			$(document).on("click", ".weaponList1", function(e){
 				let selectedWeapon = $(this).text();
-				var selectedweapon = new RobotWars.Armory[selectedWeapon]();
-
-				RobotWars.weaponType = new selectedweapon();
+				battleGround.Player1.weaponType = new RobotWars.Armory.WeaponType[selectedWeapon]();
 
 				$('#weapon1Selected').html(`${battleGround.Player1.weaponType.weapon}`);				
 			});
@@ -128,9 +136,7 @@ $(document).ready(function() {
 			</div><div id="weapon2Selected"></div>`);
 			$(document).on("click", ".weaponList2", function(e){
 				let selectedWeapon = $(this).text();
-				var selectedweapon = new RobotWars.Armory[selectedWeapon]();
-
-				RobotWars.weaponType = new selectedweapon();
+				battleGround.Player2.weaponType = new RobotWars.Armory.WeaponType[selectedWeapon]();
 
 				$('#weapon2Selected').html(`${battleGround.Player2.weaponType.weapon}`);				
 			});
@@ -139,6 +145,15 @@ $(document).ready(function() {
 
   	//click event for fight setup
   	$('#fightButton').on('click' , function(){
+
+  		//if(player2Name,player1Name,selectedRobot,selectedWeapon){};
+  		// if(player1Name == ""){
+
+  		// },if(player2Name == ""){
+
+  		// },if(selectedRobot == ""){
+
+  		// },if
 
 		$('#player-setup').addClass('hide');
 		$('#battleground').removeClass('hide');
